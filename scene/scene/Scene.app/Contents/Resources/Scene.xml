@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<scene>
+    <camera width="640" height="480" />
+    <camsettings device="0" brightness="default" gain="default" shutter="default" exposure="default" sharpness="default" focus="default" gamma="default" />
+    <tuio host="127.0.0.1" port="3333" />
+    <stream enable="0" image="source" host="127.0.0.1" port="9100" width="320" height="240" quality="60" />
+    <gpu enable="1" />
+    <centers value="1" />
+    <boxes value="1" />
+    <ids value="1" />
+    <blob minarea="2" maxarea="10" dilations="1" erosions="6" />
+    <model name="asom" />
+    <!-- 
+	*************************************
+	Background Model Parameters
+	*************************************
+     -->
+    <bgmodel name="simplegauss">
+        <param id="0" name="Sensitivity" value="22" />
+        <param id="1" name="Noise Variance" value="9" />
+        <param id="2" name="Learning Rate" value="55" />
+    </bgmodel>
+    <bgmodel name="fuzzygauss">
+        <param id="0" name="Sensitivity" value="83" />
+        <param id="1" name="BG Threshold" value="160" />
+        <param id="2" name="Learning Rate" value="62" />
+        <param id="3" name="Noise Variance" value="195" />
+    </bgmodel>
+    <bgmodel name="mog">
+        <param id="0" name="Sensitivity" value="85" />
+        <param id="1" name="BG Threshold" value="101" />
+        <param id="2" name="Learning Rate" value="46" />
+        <param id="3" name="Noise Variance" value="194" />
+    </bgmodel>
+    <bgmodel name="asom">
+        <param id="0" name="Sensitivity" value="145" />
+        <param id="1" name="Training Sensitivity" value="0" />
+        <param id="2" name="Learning Rate" value="0" />
+        <param id="3" name="Training Learning Rate" value="7" />
+        <param id="5" name="Training Steps" value="11" />
+    </bgmodel>
+    <bgmodel name="fuzzyasom">
+        <param id="0" name="Sensitivity" value="70" />
+        <param id="1" name="Training Sensitivity" value="240" />
+        <param id="2" name="Learning Rate" value="51" />
+        <param id="3" name="Training Learning Rate" value="255" />
+        <param id="5" name="Training Steps" value="151" />
+    </bgmodel>
+</scene>
